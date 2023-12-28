@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://eu3c7ke0trfy"]
+
+[ext_resource type="Script" path="res://News.gd" id="1_l4hmg"]
+[ext_resource type="Script" path="res://AcceptDialog.gd" id="2_kt1gr"]
+
+[sub_resource type="World3D" id="World3D_bmvrd"]
+
+[sub_resource type="Theme" id="Theme_o3tfo"]
+
+[sub_resource type="World3D" id="World3D_54nuj"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pk1ug"]
+viewport_path = NodePath("News/AcceptDialog")
+
+[sub_resource type="Theme" id="Theme_608mk"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="News" type="Window" parent="."]
+use_xr = true
+own_world_3d = true
+world_3d = SubResource("World3D_bmvrd")
+transparent_bg = true
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+msaa_2d = 1
+msaa_3d = 1
+screen_space_aa = 1
+use_taa = true
+use_debanding = true
+use_occlusion_culling = true
+debug_draw = 3
+use_hdr_2d = true
+vrs_mode = 3
+canvas_item_default_texture_repeat = 1
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+gui_embed_subwindows = true
+visible = false
+wrap_controls = true
+transient = true
+exclusive = true
+unresizable = true
+borderless = true
+always_on_top = true
+transparent = true
+unfocusable = true
+popup_window = true
+extend_to_title = true
+mouse_passthrough = true
+keep_title_visible = true
+content_scale_mode = 2
+content_scale_aspect = 1
+theme = SubResource("Theme_o3tfo")
+script = ExtResource("1_l4hmg")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="News"]
+use_xr = true
+own_world_3d = true
+world_3d = SubResource("World3D_54nuj")
+transparent_bg = true
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+msaa_2d = 2
+msaa_3d = 2
+screen_space_aa = 1
+use_taa = true
+use_debanding = true
+use_occlusion_culling = true
+debug_draw = 1
+use_hdr_2d = true
+vrs_mode = 1
+vrs_texture = SubResource("ViewportTexture_pk1ug")
+canvas_item_default_texture_repeat = 1
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+gui_embed_subwindows = true
+visible = true
+unresizable = true
+borderless = true
+always_on_top = true
+transparent = true
+unfocusable = true
+popup_window = true
+extend_to_title = true
+mouse_passthrough = true
+content_scale_mode = 1
+content_scale_aspect = 2
+theme = SubResource("Theme_608mk")
+dialog_autowrap = true
+script = ExtResource("2_kt1gr")
